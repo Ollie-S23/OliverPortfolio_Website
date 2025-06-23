@@ -43,3 +43,7 @@
 h1{
     color: var(--text-color)
 }
+
+body{
+    background-color: var(--base-color);
+}
