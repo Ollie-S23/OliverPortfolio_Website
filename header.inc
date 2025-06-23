@@ -2,6 +2,7 @@
 <header class="header_class">
    <!-- <a href="index.php"><img src="styles/images/OS_icon.png" alt="" 
             class="logo"></a> -->
+    <h1> Oliver's Portfolio</h1>
     <nav class="nav">
         <ul class="nav_links">
             <li><a href="index.php" <?php if ($current_page == 'index.php') echo 'class="active"'; ?>>Home</a></li>
