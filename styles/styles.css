@@ -39,3 +39,7 @@
 .darkmode #theme-switch svg:last-child{
     display:block;
 }
+
+h1{
+    color: var(--text-color)
+}
