@@ -54,13 +54,15 @@ body{
 }
 
 #settings{
-    color: var(--accent-color); 
-    background: none;
-    border: 3px solid var(--base-variant);
-    cursor: pointer;
-    padding: 8px;
+    height: 50px;
+    width: 50px;
+    padding: 0;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 80px;
 }
