@@ -14,7 +14,7 @@
     <?php include('header.inc')?>
 </header>
 <body>
-    
+    <h1>Test</h1>
     <footer>
         <?php include('footer.inc')?>
     </footer>
