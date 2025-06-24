@@ -287,3 +287,18 @@ h1{
   text-decoration: underline;
 }
 
+.underconstruction-animation {
+  height: 80vh;     /* 80% of the viewport height */
+  width: auto;      /* Maintain aspect ratio */
+  display: block;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.construction-warning{
+  font-weight: bold;
+  color: var(--secondary-accent-color);
+  display: flex;
+  justify-content: center;
+}

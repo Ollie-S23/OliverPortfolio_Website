@@ -18,7 +18,7 @@
         <?php include('header.inc')?>
         </header>
         <main>
-            <h1> test</h1>
+            <?php include('underconstruction_animation.inc')?>
         </main>
         <footer>
             <?php include('footer.inc')?>
