@@ -15,6 +15,8 @@ session_start();
     <header>
         <?php include('header_settings.inc')?>
     </header>
-    <h1> Test </h1>
+    <main>
+        <?php include('underconstruction_animation.inc')?>
+    </main>
 </body>
 </html>
