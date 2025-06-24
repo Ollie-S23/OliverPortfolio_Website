@@ -14,5 +14,5 @@
     </a>
   </div>
 
-  <p id="copyright">&copy; Copyright 2025 | Oliver Scott | All Rights Reserved</p>
+  <p id="copyright">&copy; Copyright <?php echo date("Y"); ?> | Oliver Scott | All Rights Reserved</p>
 </footer>

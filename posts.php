@@ -7,7 +7,7 @@
     <meta name="keywords" content="The Optional Group">
     <meta name="author" content="">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="shortcut icon" href="images/OS_icon.png">
+    <link rel="shortcut icon" href="styles/images/OS_icon.png">
     <title>The Optional Group</title>
     <script type="text/javascript" src="darkmode.js" defer></script>
 </head>

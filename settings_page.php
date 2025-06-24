@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" href="styles/images/OS_icon.png">
     <script src="darkmode.js" defer></script>
 </head>
 <?php
