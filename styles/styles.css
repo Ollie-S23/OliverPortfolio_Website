@@ -72,7 +72,7 @@ body{
   color: var(--text-color);
   text-align: center;
   margin: 0;
-  padding: 10%;
+  padding: 2%;
   font-size: 2rem;
   font-size: 400%;
 }
@@ -101,27 +101,28 @@ body{
 }
 
 .navigation {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
+  display: flex; /* Enables horizontal layout using Flexbox */
+  gap: 1.5rem; 
+  align-items: center; /* Vertically centers items inside the flex container */
   padding: 0;
   margin: 0;
 }
 
 .nav_links {
-  list-style: none;
-  display: flex;
+  list-style: none;  /* Removes bullet points from the list items */
+  display: flex;   /* Displays <li> items side by side horizontally */
   gap: 1.5rem;
   padding: 0;
   margin: 0;
 }
 
 .nav_links li a {
-  text-decoration: none;
-  color: var(--text-color);
+  text-decoration: none; /* Removes underlines from links */
+  color: var(--text-color); 
   padding: 0.5em 1em;
 }
 
+/*  when current page is active */
 .nav_links li a.active {
   background-color: var(--accent-color);
   color: white;
@@ -129,29 +130,83 @@ body{
 }
 
 .header-tray {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  display: flex;  /* Enables horizontal layout for items like the email button */
+  align-items: center;  /* Vertically aligns items in the center */
+  gap: 1.5rem; 
   padding: 0;
   margin-top: -40px; /* adjust to match nav height */
-  justify-content: flex-end;
+  justify-content: flex-end;  /* Aligns contents to the right of the container */
 }
 
 #cta {
-  text-decoration: none;
+  text-decoration: none;   /* Removes underline from link */
   color: var(--accent-color);
   font-weight: bold;
   padding: 0.5em 1em;
   border: 2px solid var(--accent-color);
   border-radius: 6px;
   display: inline-block;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  cursor: pointer;  /* Changes cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Adds smooth color transition effect on hover */
 }
 
+/*  when mouse hover of element */
 #cta:hover {
   background-color: var(--accent-color);
   color: white;
 }
 
+footer {
+  background-color: var(--base-variant);
+  text-align: center; /* center line content */
+  padding: 2rem 1rem; /* space in footer */
+}
+
+/* Footer nav container */
+.footer_nav {
+  display: flex; /* flexbox */
+  justify-content: center; /* horizotal centre */
+  margin-bottom: 1rem; 
+}
+
+/* Horizontal nav links */
+.footer_links {
+  display: flex; /*  Displays the <li> elements in a row (horizontally) */
+  list-style: none;  /*  removes bulletpoints */
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual link styles */
+.footer_links li a {
+  text-decoration: none;  /*  removes underline from links */
+  color: var(--accent-color); 
+  font-weight: bold; 
+  transition: color 0.3s ease;  /*  Smoothly animates the color change on hover */
+}
+
+/*  when mouse hover of element */
+.footer_links li a:hover {
+  color: white; 
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  padding: 0.25rem 0.75rem;
+}
+
+/* GitHub link styling */
+.footer_link {
+  text-decoration: none; /*  removes underline from links */
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.footer_link:hover {
+  text-decoration: underline; /*  adds underline */
+}
+
+#copyright {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
 
