@@ -17,6 +17,7 @@
         </div>
         <div class="right-spacer"></div>
         </div>
+        <hr id="hr">
     <nav class="nav">
         <ul class="nav_links">
             <li><a href="index.php" <?php if ($current_page == 'index.php') echo 'class="active"'; ?>>Home</a></li>

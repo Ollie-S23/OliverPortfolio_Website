@@ -72,7 +72,9 @@ body{
   color: var(--text-color);
   text-align: center;
   margin: 0;
+  padding: 10%;
   font-size: 2rem;
+  font-size: 400%;
 }
 
 /* icon_buttons placed top-right, outside h1's influence */
@@ -89,4 +91,11 @@ body{
 /* Right spacer matches icon_buttons width for perfect centering */
 .right-spacer {
   width: calc(2 * 24px + 20px); /* 2 icons (24px each) + 20px gap */
+}
+
+#hr {
+    height: 2px;
+    border: none;
+    background-color: var(--accent-color);
+    margin: 20px 0;
 }
