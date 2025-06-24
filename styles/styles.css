@@ -159,7 +159,7 @@ body{
 footer {
   background-color: var(--base-variant);
   text-align: center; /* center line content */
-  padding: 2rem 1rem; /* space in footer */
+  padding: 1rem; /* space in footer */
 }
 
 /* Footer nav container */
@@ -226,4 +226,8 @@ html, body {
 
 main {
   flex: 1; /* Pushes the footer to the bottom if there's not enough content */
+}
+
+h1{
+  color: var(--text-color);
 }
