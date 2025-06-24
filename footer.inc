@@ -2,9 +2,9 @@
   <div class="footer_nav">
     <ul class="footer_links">
       <li><a href="index.php">Home</a></li>
-      <li><a href="about.php">About</a></li>
-      <li><a href="jobs.php">Jobs</a></li>
-      <li><a href="apply.php">Apply</a></li>
+      <li><a href="aboutme.php">About Me</a></li>
+      <li><a href="posts.php">Update Posts</a></li>
+      <li><a href="external_links.php">External Links</a></li>
     </ul>
   </div>
 
