@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head> <!-- Adds web browser support meta tags for format and search algorithm-->
@@ -12,13 +11,18 @@
     <title>The Optional Group</title>
     <script type="text/javascript" src="darkmode.js" defer></script>
 </head>
+<?php session_start(); ?>
 <body>
-    <header>
-    <?php include('header.inc')?>
-    </header>
-    <h1> test</h1>
-    <footer>
-        <?php include('footer.inc')?>
-    </footer>
+    <div class="page-wrapper">
+        <header>
+        <?php include('header.inc')?>
+        </header>
+        <main>
+            <h1> test</h1>
+        </main>
+        <footer>
+            <?php include('footer.inc')?>
+        </footer>
+    </div>
 </body>
 </html>

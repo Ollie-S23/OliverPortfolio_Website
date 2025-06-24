@@ -13,12 +13,16 @@
 </head>
 <?php session_start(); ?>
 <body>
-    <header>
-    <?php include('header.inc')?>
-    </header>
-    <h1> test</h1>
-    <footer>
-        <?php include('footer.inc')?>
-    </footer>
+    <div class="page-wrapper">
+        <header>
+        <?php include('header.inc')?>
+        </header>
+        <main>
+            <h1> test</h1>
+        </main>
+        <footer>
+            <?php include('footer.inc')?>
+        </footer>
+    </div>
 </body>
 </html>
