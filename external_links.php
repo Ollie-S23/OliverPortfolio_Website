@@ -18,7 +18,27 @@
         <?php include('header.inc')?>
         </header>
         <main>
-            <h1> test</h1>
+            <table class="social_banner"> 
+                <caption>Reach Out Across My Platforms</caption>
+                <tbody>
+                    <tr>
+                    <td><a class="social-links" href="https://instagram.com" target="_blank">Instagram</a></td>
+                    <td><img class="social-icon" src="styles/images/Instagram-Icon.png" alt="Instagram logo" title="Instagram" loading="lazy"></td>
+                    </tr>
+                    <tr>
+                     <td><a class="social-links" href="https://x.com" target="_blank">X (Twitter)</a></td>
+                    <td><img class="social-icon" src="styles/images/twitter-x.png" alt="X logo" title="X" loading="lazy"></td>
+                    </tr>
+                    <tr>
+                     <td><a class="social-links" href="https://youtube.com" target="_blank">YouTube</a></td>
+                    <td><img class="social-icon" src="styles/images/youtube-logo-png-46016-1.png" alt="YouTube logo" title="YouTube" loading="lazy"></td>
+                    </tr>
+                    <tr>
+                     <td><a class="social-links" href="https://au.linkedin.com/" target="_blank">Linked In</a></td>
+                    <td><img class="social-icon" src="styles/images/linkedin.png" alt="Linked In logo" title="Linked In" loading="lazy"></td>
+                    </tr>
+                </tbody>
+            </table>
         </main>
         <footer>
             <?php include('footer.inc')?>
