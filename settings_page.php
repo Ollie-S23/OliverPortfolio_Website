@@ -11,6 +11,9 @@
 session_start();
 ?>
 <body>
+    <header>
+        <?php include('header_settings.inc')?>
+    </header>
     <h1> Test </h1>
 </body>
 </html>

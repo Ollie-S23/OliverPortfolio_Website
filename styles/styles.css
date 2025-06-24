@@ -5,6 +5,7 @@
     --secondary-text: #232738;
     --primary-color: #3a435ed;
     --accent-color: #0071ff;
+    --secondary-accent-color: #FF3131;
 }
 .darkmode{
     --base-color: #070b1d;
@@ -13,6 +14,7 @@
     --secondary-text: #a4a5b8;
     --primary-color: #3a435d;
     --accent-color: #0071ff;
+    --secondary-accent-color: #FF3131;
 }
 #theme-switch{
     height: 50px;
@@ -37,10 +39,6 @@
     display:block;
 }
 
-h1{
-    color: var(--text-color)
-}
-
 body{
     background-color: var(--base-color);
 }
@@ -61,3 +59,34 @@ body{
     align-items: center;
 }
 
+.top_header {
+  position: relative;
+  display: flex;
+  justify-content: center;  /* centers h1 horizontally */
+  align-items: center;
+  height: 80px;              /* optional: control header height */
+  padding: 0 20px;
+}
+
+.top_header h1 {
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* icon_buttons placed top-right, outside h1's influence */
+.icon_buttons {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+
+/* Right spacer matches icon_buttons width for perfect centering */
+.right-spacer {
+  width: calc(2 * 24px + 20px); /* 2 icons (24px each) + 20px gap */
+}
