@@ -25,7 +25,6 @@
 
                 if (!$conn) { // Check if the connection was successful
                     // If the connection failed, display an error message and include the underconstruction animation
-                    die("Connection failed: " . mysqli_connect_error());
                     include('underconstruction_animation.inc');
                    echo  "<p> Error: Failed to connect to database server. Please try again later and contact support </p>";
                 }
@@ -40,7 +39,7 @@
                         echo "<p>✅ Database contains {$row['total']} entries.</p>";
                     } else { // If there are no entries, display a message indicating that the database is empty
                         include('underconstruction_animation.inc');
-                        echo  "<h3 class=\"construction-warning\"> There are no posts available at the moment.</h3>";
+                        echo "<h3 class=\"construction-warning\"> There are no posts available at the moment.</h3>";
                     }
                     mysqli_free_result($result); // Free the result set to free up resources
                 } else { // If the query failed, display an error message and include the underconstruction animation
