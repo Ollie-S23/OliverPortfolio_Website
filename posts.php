@@ -31,7 +31,7 @@
 
                 // If the connection was successful, proceed to check the database for entries
                 $table_name = "posts"; // Specify the table name to check for entries
-                $query = "SELECT COUNT(*) AS total FROM $table_name"; // Create a query to count the total number of entries in the specified table
+                $query = "SELECT COUNT(*) AS total FROM $table_name WHERE status='published'"; // Create a query to count the total number of entries in the specified table
 
                 $result = mysqli_query($conn, $query); // Execute the query
                 if ($result) {
