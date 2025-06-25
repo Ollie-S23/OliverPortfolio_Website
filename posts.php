@@ -27,6 +27,7 @@
                     // If the connection failed, display an error message and include the underconstruction animation
                     include('underconstruction_animation.inc');
                    echo  "<p> Error: Failed to connect to database server. Please try again later and contact support </p>";
+                   exit();
                 }
                 // If the connection was successful, proceed to check the database for entries
                 $table_name = "posts"; // Specify the table name to check for entries

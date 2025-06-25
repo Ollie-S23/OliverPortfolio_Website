@@ -3,7 +3,7 @@
     --base-variant: #e8e9ed;
     --text-color: #111528; 
     --secondary-text: #232738;
-    --primary-color: #3a435ed;
+    --primary-color: #3a435d; /* 6-digit hex */
     --accent-color: #0071ff;
     --secondary-accent-color: #FF3131;
 }
@@ -304,9 +304,7 @@ h1{
 }
 
 .posts_unavailable {
-  font-weight: bold;
-  color: var(--accent-color);
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+ color: blue;
 }
+
+
