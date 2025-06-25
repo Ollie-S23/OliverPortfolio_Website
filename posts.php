@@ -21,27 +21,29 @@
             <?php
                 require_once("settings.php");
 
-                $conn = mysqli_connect($host, $user, $pwd, $sql_db);
+                $conn = mysqli_connect($host, $user, $pwd, $sql_db); // Establish a connection to the database
 
-                if (!$conn) {
+                if (!$conn) { // Check if the connection was successful
+                    // If the connection failed, display an error message and include the underconstruction animation
                     die("Connection failed: " . mysqli_connect_error());
                     include('underconstruction_animation.inc');
                    echo  "<p> Error: Failed to connect to database server. Please try again later and contact support </p>";
                 }
-                $table_name = "posts";
-                $query = "SELECT COUNT(*) AS total FROM $table_name";
+                // If the connection was successful, proceed to check the database for entries
+                $table_name = "posts"; // Specify the table name to check for entries
+                $query = "SELECT COUNT(*) AS total FROM $table_name"; // Create a query to count the total number of entries in the specified table
 
-                $result = mysqli_query($conn, $query);
+                $result = mysqli_query($conn, $query); // Execute the query
                 if ($result) {
-                    $row = mysqli_fetch_assoc($result);
-                    if ($row['total'] > 0) {
+                    $row = mysqli_fetch_assoc($result); // Fetch the result as an associative array
+                    if ($row['total'] > 0) { // Check if there are any entries in the table
                         echo "<p>✅ Database contains {$row['total']} entries.</p>";
-                    } else {
+                    } else { // If there are no entries, display a message indicating that the database is empty
                         include('underconstruction_animation.inc');
                         echo  "<h3 class=\"construction-warning\"> There are no posts available at the moment.</h3>";
                     }
-                    mysqli_free_result($result);
-                } else {
+                    mysqli_free_result($result); // Free the result set to free up resources
+                } else { // If the query failed, display an error message and include the underconstruction animation
                     include('underconstruction_animation.inc');
                    echo  "<p> Error: Failed to connect to database server. Please try again later and contact support </p>";
                 }
