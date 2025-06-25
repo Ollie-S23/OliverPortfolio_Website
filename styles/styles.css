@@ -302,3 +302,11 @@ h1{
   display: flex;
   justify-content: center;
 }
+
+.posts_unavailable {
+  font-weight: bold;
+  color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}

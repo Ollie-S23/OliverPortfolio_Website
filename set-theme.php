@@ -7,3 +7,4 @@ if (isset($_POST['theme'])) {
         $_SESSION['theme'] = $theme;
     }
 }
+?>
