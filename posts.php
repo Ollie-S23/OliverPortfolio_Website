@@ -52,8 +52,7 @@
                                     echo "<p class='post-id'>Post ID: " . htmlspecialchars($post['id']) . "</p>";
                                     echo "<h4> ' <strong>" . htmlspecialchars($post['title']) . "</strong> ' Published by: <em>" . htmlspecialchars($post['author']) . "</em></h4>";
                                     echo "<div class='content'>" . nl2br(htmlspecialchars($post['content'])) . "</div>";
-                                    echo "<p class='meta'><small>Created: " . htmlspecialchars($post['created_at']) . " | Updated: " . htmlspecialchars($post['updated_at']) . "</small></p>";
-                                    echo "<p class='timezone'><small>Timezone: " . htmlspecialchars($post['timezone']) . "</small></p>";
+                                    echo "<p class='meta'><small>Created: " . htmlspecialchars($post['created_at']) . " | Updated: " . htmlspecialchars($post['updated_at']) . " (" .htmlspecialchars($post['timezone']) . ")</small></p>";
                                     echo "</section>"; // Close the post section
                                 }
                             } else {
