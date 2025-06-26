@@ -19,6 +19,9 @@
         </header>
         <main>
             <p class="manage_posts-p"> Welcome to the Manage Posts page. Here you can view and manage your posts.</p>
+            <div class="manage_container"
+                <p> This page is currently under construction. Please check back later for updates.</p>
+            </div> 
         </main>
         <footer>
             <?php include('footer.inc')?>

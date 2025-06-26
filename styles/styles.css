@@ -364,3 +364,15 @@ h1{
 .manage_posts-p {
   color: var(--text-color);
 }
+
+.manage_container {
+  background-color: #dfefee;
+  color: black;
+  width: 95vw; /* 90% of the viewport width */
+  margin : 0 auto; /* Center the container */
+  border-radius: 8px;
+  padding: 10px;
+  border-color: red;
+  border-width: 4px;
+  border-style: solid;
+}
