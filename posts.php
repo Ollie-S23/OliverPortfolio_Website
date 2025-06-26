@@ -37,12 +37,12 @@
                 if ($result) {
                     $row = mysqli_fetch_assoc($result); // Fetch the result as an associative array
                     if ($row['total'] > 0) { // Check if there are any entries in the table
-                        echo "<h3>Posts</h3>";
-                        echo "<p>Total Posts: {$row['total']}</p>";
-                        //check the status of databse entries and check that they are 'published'
                         echo "<div class='posts-container'>"; // Start a container for the posts
+                        echo "<h3>Posts</h3>";
+                        echo "<p class=\"total-posts\">Total Posts: {$row['total']}</p>";
+                        //check the status of databse entries and check that they are 'published'
                             echo "<div class='posts-list'>"; // Start a list for the posts
-                            
+
                             // Fetch all published posts
                             $posts_query = "SELECT id, title, author, content, created_at, updated_at, timezone FROM $table_name WHERE status='published' ORDER BY created_at DESC";
                             $posts_result = mysqli_query($conn, $posts_query);
@@ -55,7 +55,7 @@
                                     echo "<div class='content'>" . nl2br(htmlspecialchars($post['content'])) . "</div>";
                                     echo "<p class='meta'><small>Created: " . htmlspecialchars($post['created_at']) . " | Updated: " . htmlspecialchars($post['updated_at']) . "</small></p>";
                                     echo "<p class='timezone'><small>Timezone: " . htmlspecialchars($post['timezone']) . "</small></p>";
-                                    echo "</section>";
+                                    echo "</section>"; // Close the post section
                                 }
                             } else {
                                 echo "<p>No published posts found.</p>";

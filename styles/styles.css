@@ -312,7 +312,24 @@ h1{
 }
 
 .posts-container {
-  background-color: var(--primary-color);
+  background-color: var(--container-color);
+  width: 95vw; /* 90% of the viewport width */
+  margin : 0 auto; /* Center the container */
+  border-radius: 8px;
+  padding-top: 1px;
+  padding-bottom: 15px;
+}
+
+.posts-container h3 {
+  color: var(--text-color);
+  padding-left: 25px;
+  font-size: xx-large;
+}
+
+.posts-container .total-posts {
+  color: var(--text-color);
+  padding-left: 25px;
+  font-size: large;
 }
 
 .post {
@@ -321,8 +338,15 @@ h1{
   padding: 1rem;             /* give it space inside */
   border-radius: 8px;        /* optional rounded corners */
   margin-bottom: 1rem;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 
 .content {
-  background-color: #e8e9ed;
+  background-color: var(--base-color);
+  color: var(--secondary-text);
+  padding: 1rem;             /* give it space inside */
+  border-radius: 8px;        /* optional rounded corners */
+  margin-bottom: 1rem;
 }
