@@ -48,7 +48,7 @@
                             $posts_result = mysqli_query($conn, $posts_query);
                             if ($posts_result && mysqli_num_rows($posts_result) > 0) {
                                 while ($post = mysqli_fetch_assoc($posts_result)) {
-                                    echo "<section class='post'>";
+                                    echo "<section class=\"post\">";
                                     echo "<p class='post-id'>Post ID: " . htmlspecialchars($post['id']) . "</p>";
                                     echo "<h4>" . htmlspecialchars($post['title']) . "</h4>";
                                     echo "<p><strong>Author:</strong> " . htmlspecialchars($post['author']) . "</p>";
