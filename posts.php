@@ -48,14 +48,14 @@
                             $posts_result = mysqli_query($conn, $posts_query);
                             if ($posts_result && mysqli_num_rows($posts_result) > 0) {
                                 while ($post = mysqli_fetch_assoc($posts_result)) {
-                                    echo "<div class='post'>";
+                                    echo "<section class='post'>";
                                     echo "<p class='post-id'>Post ID: " . htmlspecialchars($post['id']) . "</p>";
                                     echo "<h4>" . htmlspecialchars($post['title']) . "</h4>";
                                     echo "<p><strong>Author:</strong> " . htmlspecialchars($post['author']) . "</p>";
                                     echo "<div class='content'>" . nl2br(htmlspecialchars($post['content'])) . "</div>";
                                     echo "<p class='meta'><small>Created: " . htmlspecialchars($post['created_at']) . " | Updated: " . htmlspecialchars($post['updated_at']) . "</small></p>";
                                     echo "<p class='timezone'><small>Timezone: " . htmlspecialchars($post['timezone']) . "</small></p>";
-                                    echo "</div>";
+                                    echo "</section>";
                                 }
                             } else {
                                 echo "<p>No published posts found.</p>";
