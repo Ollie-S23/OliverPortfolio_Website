@@ -54,8 +54,8 @@
                                     echo "<p><strong>Author:</strong> " . htmlspecialchars($post['author']) . "</p>";
                                     echo "<div class='content'>" . nl2br(htmlspecialchars($post['content'])) . "</div>";
                                     echo "<p class='meta'><small>Created: " . htmlspecialchars($post['created_at']) . " | Updated: " . htmlspecialchars($post['updated_at']) . "</small></p>";
-                                    echo "</div>";
                                     echo "<p class='timezone'><small>Timezone: " . htmlspecialchars($post['timezone']) . "</small></p>";
+                                    echo "</div>";
                                 }
                             } else {
                                 echo "<p>No published posts found.</p>";
