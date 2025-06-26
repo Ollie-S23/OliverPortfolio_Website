@@ -360,3 +360,7 @@ h1{
   font-size: medium;
   line-height: 1.6; /* Improves readability */
 }
+
+.manage_posts-p {
+  color: var(--text-color);
+}
