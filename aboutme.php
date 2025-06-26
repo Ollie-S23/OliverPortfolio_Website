@@ -19,6 +19,7 @@
         </header>
         <main>
             <?php include('underconstruction_animation.inc')?>
+            //TODO: Design and implement the home page layout and content.
         </main>
         <footer>
             <?php include('footer.inc')?>
