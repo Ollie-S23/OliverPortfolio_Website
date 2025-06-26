@@ -355,3 +355,8 @@ h1{
   font-size: x-large;
   font-weight: normal;
 }
+
+.posts .content {
+  font-size: medium;
+  line-height: 1.6; /* Improves readability */
+}
