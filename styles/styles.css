@@ -6,6 +6,8 @@
     --primary-color: #3a435d; /* 6-digit hex */
     --accent-color: #0071ff;
     --secondary-accent-color: #FF3131;
+    --container-color: #6b3c89;
+    --container-accent-color: #29bbbc;
 }
 .darkmode{
     --base-color: #070b1d;
@@ -15,6 +17,8 @@
     --primary-color: #3a435d;
     --accent-color: #0071ff;
     --secondary-accent-color: #FF3131;
+    --container-color: #453c89;
+    --container-accent-color: #3c8089;
 }
 #theme-switch{
     height: 50px;
@@ -246,7 +250,7 @@ h1{
   /* Remove fixed height */
   margin: 2rem auto;
   width: 300px;
-  background-color: var(--primary-color);
+  background-color: var(--container-accent-color);
   color: var(--text-color);
   border-radius: 10px;
   padding: 1.5rem;
@@ -307,6 +311,18 @@ h1{
  color: blue;
 }
 
+.posts-container {
+  background-color: var(--primary-color);
+}
+
 .post {
-  background-color: blue;
+  background-color: var(--container-accent-color);
+  color: var(--text-color);              /* for contrast */
+  padding: 1rem;             /* give it space inside */
+  border-radius: 8px;        /* optional rounded corners */
+  margin-bottom: 1rem;
+}
+
+.content {
+  background-color: #e8e9ed;
 }
