@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head> <!-- Adds web browser support meta tags for format and search algorithm-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,17 +13,20 @@
     <script type="text/javascript" src="darkmode.js" defer></script>
 </head>
 <?php session_start(); ?>
+
 <body>
     <div class="page-wrapper">
         <header>
-        <?php include('header.inc')?>
+            <?php include('header.inc') ?>
         </header>
         <main>
-            <?php include('underconstruction_animation.inc')?>
+            <?php include('underconstruction_animation.inc') ?>
+            <!--TODO: Design and implement the home page layout and content.-->
         </main>
         <footer>
-            <?php include('footer.inc')?>
+            <?php include('footer.inc') ?>
         </footer>
     </div>
 </body>
+
 </html>

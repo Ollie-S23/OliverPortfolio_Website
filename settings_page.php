@@ -17,6 +17,7 @@ session_start();
     </header>
     <main>
         <?php include('underconstruction_animation.inc')?>
+        <!--TODO: Design and implement the settings page layout and content.-->
     </main>
 </body>
 </html>

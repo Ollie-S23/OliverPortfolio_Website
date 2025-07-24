@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head> <!-- Adds web browser support meta tags for format and search algorithm-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,20 +13,25 @@
     <script type="text/javascript" src="darkmode.js" defer></script>
 </head>
 <?php session_start(); ?>
+
 <body>
     <div class="page-wrapper">
         <header>
-        <?php include('header.inc')?>
+            <?php include('header.inc') ?>
         </header>
         <main>
             <p class="manage_posts-p"> Welcome to the Manage Posts page. Here you can view and manage your posts.</p>
-            <div class="manage_container"
+            <div class="manage_container">
+                <?php // TODO: Add functionality to manage posts, such as editing or deleting them. 
+                ?>
                 <p> This page is currently under construction. Please check back later for updates.</p>
-            </div> 
+                <input type="submit" name="Create" value="Create Post">
+            </div>
         </main>
         <footer>
-            <?php include('footer.inc')?>
+            <?php include('footer.inc') ?>
         </footer>
     </div>
 </body>
+
 </html>

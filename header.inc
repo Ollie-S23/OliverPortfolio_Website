@@ -26,6 +26,7 @@
           <li><a href="aboutme.php" <?php if ($current_page == 'aboutme.php') echo 'class="active"'; ?>>About Me</a></li>
           <li><a href="posts.php" <?php if ($current_page == 'posts.php') echo 'class="active"'; ?>>Update Posts</a></li>
           <li><a href="external_links.php" <?php if ($current_page == 'external_links.php') echo 'class="active"'; ?>>Find me Elsewhere!</a></li>
+          <!--TODO: Create 2 headers, for users and admin pages, currently this default header includes admin pages as well. -->
           <li><a href="manage_posts.php" <?php if ($current_page == 'manage_posts.php') echo 'class="active"'; ?>>⚙️ manage posts</a></li>
         </ul>
       </nav>
