@@ -1,3 +1,7 @@
+body {
+  background-color: lime !important;
+}
+
 :root{
     --base-color: white;
     --base-variant: #e8e9ed;
@@ -375,4 +379,13 @@ h1{
   border-color: red;
   border-width: 4px;
   border-style: solid;
+}
+
+#zzz {
+    background-color: red;
+    width: 95vw;
+    height: 300px;
+    margin: 20px auto;
+    z-index: 100;
+    color: purple;
 }

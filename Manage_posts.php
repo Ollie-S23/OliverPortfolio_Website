@@ -27,6 +27,10 @@
                 <p> This page is currently under construction. Please check back later for updates.</p>
                 <input type="submit" name="Create" value="Create Post">
             </div>
+            <div class="manage_container">Hello Hello
+                <input type="file" accept="image/*" multiple>
+
+            </div>
         </main>
         <footer>
             <?php include('footer.inc') ?>
