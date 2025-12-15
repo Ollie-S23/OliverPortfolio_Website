@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="keywords" content="The Optional Group">
+    <meta name="keywords" content="Oliver Scott Portfolio">
     <meta name="author" content="">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="shortcut icon" href="styles/images/OS_icon.png">
-    <title>The Optional Group</title>
+    <title>Oliver's Portfolio - Home</title>
     <script type="text/javascript" src="darkmode.js" defer></script>
 </head>
 <?php session_start(); ?>

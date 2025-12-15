@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="keywords" content="The Optional Group">
+    <meta name="keywords" content="Oliver Scott Portfolio">
     <meta name="author" content="">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="shortcut icon" href="styles/images/OS_icon.png">
-    <title>The Optional Group</title>
+    <title>Oliver's Portfolio - Manage Page</title>
     <script type="text/javascript" src="darkmode.js" defer></script>
 </head>
 <?php session_start(); ?>
@@ -29,19 +29,22 @@
             </div>
             <div class="manage_container">
                 <div id="create_post_container">
-                    <!--Post title -->
-                    <label for="post-title">Post Title:</label>
-                    <input type="text" id="post-title" name="post-title">
-                    <!--Author-->
-                    <label for="post-author">Author:</label>
-                    <input type="text" id="post-author" name="post-author" value="Oliver Scott">
-                    <!--Post Desc -->
-                    <label for="post-description">Post Description:</label>
-                    <textarea id="post-description" name="post-description" rows="4" cols="50" maxlength="150"></textarea>
-                    <!--Post Content -->
-                    <label for="post-content">content:</label>
-                    <textarea id="post-content" name="post-content" rows="4" cols="50" minlength="500"></textarea>
-                    <!--categories checkbox -->
+                    <div id="post_create_topFormatting">                    <!--Post title -->
+                        <label for="post-title">Post Title:</label>
+                        <input type="text" id="post-title" name="post-title">
+                        <!--Author-->
+                        <label for="post-author">Author:</label>
+                        <input type="text" id="post-author" name="post-author" value="Oliver Scott">
+                        <!--Post Desc -->
+                        <label for="post-description">Post Description:</label>
+                        <textarea id="post-description" name="post-description" rows="4" cols="50" maxlength="150"></textarea>
+                        <!--Post Content -->
+                        <label for="post-content">content:</label>
+                        <textarea id="post-content" name="post-content" rows="4" cols="50" minlength="500"></textarea>
+                        <!--File Upload -->
+                        <label for="file-upload">Choose a file to upload:</label>
+                        <input type="file" id="file-upload" name="file-upload" multiple>
+                    </div>
                     <!--tags checkbox -->
                     <input type="checkbox" id="Software" name="Software" value="Software">
                     <label for="Software"> Software</label><br>
@@ -63,9 +66,6 @@
                     <label for="Game Development"> Game Development</label><br>
                     <input type="checkbox" id="Code" name="Code" value="Code">
                     <label for="Code"> Code</label><br>
-                    <!--File Upload -->
-                    <label for="file-upload">Choose a file to upload:</label>
-                    <input type="file" id="file-upload" name="file-upload" multiple>
                     <!--Submit Button -->
                     <input type="submit" name="Publish" value="Publish Post">
                     <input type="reset" name="Reset" value="Reset Form">

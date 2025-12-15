@@ -382,3 +382,7 @@ h1{
 #create_post_container {
   margin: 5px;
 }
+
+#post_create_topFormatting {
+  background-color: yellow;
+}
