@@ -28,9 +28,31 @@
                 <input type="submit" name="Create" value="Create Post">
             </div>
             <div class="manage_container">Hello Hello
-                <input type="file" accept="image/*" multiple>
+                <label for="post-title">Post Title:</label>
+                <input type="text" id="post-title" name="post-title">
 
+                <label for="post-description">Post Description:</label>
+                <textarea id="post-description" name="post-description" rows="4" cols="50" maxlength="150"></textarea>
+
+                <label for="post-content">content:</label>
+                <textarea id="post-content" name="post-content" rows="4" cols="50" minlength="500"></textarea>
+
+                <label for="post-links">content:</label>
+                <textarea id="post-links" name="post-links" rows="4" cols="50" minlength="500"></textarea>
+
+                <label for="file-upload">Choose a file to upload:</label>
+                <input type="file" id="file-upload" name="file-upload" multiple>
             </div>
+            <!-- Title 
+            Date of Creation 
+            Date of Edit
+            Image(s) - file upload 
+            Description 
+            Any external links
+            Author - Const “Oliver Scott”
+            Tags 
+            Categories 
+            Summary Text-->
         </main>
         <footer>
             <?php include('footer.inc') ?>
