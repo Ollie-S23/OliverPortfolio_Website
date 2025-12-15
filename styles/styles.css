@@ -383,6 +383,43 @@ h1{
   margin: 5px;
 }
 
-#post_create_topFormatting {
-  background-color: yellow;
+#post_create_topFormatting
+{
+    display: grid;
+    grid-template-columns: 15% auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+        "lblTitle      post-title"
+        "lblAuthor     post-author"
+        "lblDesc       post-description"
+        "lblContent    post-content"
+        "lblFile       file-upload";
+    margin: 0;
+}
+
+#lblTitle{grid-area: lblTitle;}
+
+#post-title{grid-area: post-title;}
+
+#lblAuthor{grid-area: lblAuthor;}
+
+#post-author{grid-area: post-author;}
+
+#lblDesc{grid-area: lblDesc;}
+
+#post-description{grid-area: post-description;}
+
+#lblContent{grid-area: lblContent;}
+
+#post-content{grid-area: post-content;}
+
+#lblFile{grid-area: lblFile;}
+
+#file-upload{grid-area: file-upload;}
+
+
+#post-title, #post-author, #post-description, #post-content, #file-upload {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

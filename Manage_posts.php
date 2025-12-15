@@ -30,19 +30,19 @@
             <div class="manage_container">
                 <div id="create_post_container">
                     <div id="post_create_topFormatting">                    <!--Post title -->
-                        <label for="post-title">Post Title:</label>
+                        <label id="lblTitle" for="post-title">Post Title:</label>
                         <input type="text" id="post-title" name="post-title">
                         <!--Author-->
-                        <label for="post-author">Author:</label>
+                        <label id="lblAuthor" for="post-author">Author:</label>
                         <input type="text" id="post-author" name="post-author" value="Oliver Scott">
                         <!--Post Desc -->
-                        <label for="post-description">Post Description:</label>
-                        <textarea id="post-description" name="post-description" rows="4" cols="50" maxlength="150"></textarea>
+                        <label id="lblDesc" for="post-description">Post Description:</label>
+                        <textarea id="post-description" name="post-description" rows="3" cols="50" maxlength="150"></textarea>
                         <!--Post Content -->
-                        <label for="post-content">content:</label>
-                        <textarea id="post-content" name="post-content" rows="4" cols="50" minlength="500"></textarea>
+                        <label id="lblContent" for="post-content">content:</label>
+                        <textarea id="post-content" name="post-content" rows="7" cols="50" minlength="500"></textarea>
                         <!--File Upload -->
-                        <label for="file-upload">Choose a file to upload:</label>
+                        <label id="lblFile" for="file-upload">Choose a file to upload:</label>
                         <input type="file" id="file-upload" name="file-upload" multiple>
                     </div>
                     <!--tags checkbox -->
@@ -64,6 +64,8 @@
                     <label for="Robotics"> Robotics</label><br>
                     <input type="checkbox" id="Game Development" name="Game Development" value="Game Development">
                     <label for="Game Development"> Game Development</label><br>
+                    <input type="checkbox" id="Web Development" name="Web Development" value="Web Development">
+                    <label for="Web Development"> Web Development</label><br>
                     <input type="checkbox" id="Code" name="Code" value="Code">
                     <label for="Code"> Code</label><br>
                     <!--Submit Button -->
