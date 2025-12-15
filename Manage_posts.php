@@ -27,21 +27,49 @@
                 <p> This page is currently under construction. Please check back later for updates.</p>
                 <input type="submit" name="Create" value="Create Post">
             </div>
-            <div class="manage_container">Hello Hello
-                <label for="post-title">Post Title:</label>
-                <input type="text" id="post-title" name="post-title">
-
-                <label for="post-description">Post Description:</label>
-                <textarea id="post-description" name="post-description" rows="4" cols="50" maxlength="150"></textarea>
-
-                <label for="post-content">content:</label>
-                <textarea id="post-content" name="post-content" rows="4" cols="50" minlength="500"></textarea>
-
-                <label for="post-links">content:</label>
-                <textarea id="post-links" name="post-links" rows="4" cols="50" minlength="500"></textarea>
-
-                <label for="file-upload">Choose a file to upload:</label>
-                <input type="file" id="file-upload" name="file-upload" multiple>
+            <div class="manage_container">
+                <div id="create_post_container">
+                    <!--Post title -->
+                    <label for="post-title">Post Title:</label>
+                    <input type="text" id="post-title" name="post-title">
+                    <!--Author-->
+                    <label for="post-author">Author:</label>
+                    <input type="text" id="post-author" name="post-author" value="Oliver Scott">
+                    <!--Post Desc -->
+                    <label for="post-description">Post Description:</label>
+                    <textarea id="post-description" name="post-description" rows="4" cols="50" maxlength="150"></textarea>
+                    <!--Post Content -->
+                    <label for="post-content">content:</label>
+                    <textarea id="post-content" name="post-content" rows="4" cols="50" minlength="500"></textarea>
+                    <!--categories checkbox -->
+                    <!--tags checkbox -->
+                    <input type="checkbox" id="Software" name="Software" value="Software">
+                    <label for="Software"> Software</label><br>
+                    <input type="checkbox" id="Engineering" name="Engineering" value="Engineering">
+                    <label for="Engineering"> Engineering</label><br>
+                    <input type="checkbox" id="Uni Project" name="Uni Project" value="Uni Project">
+                    <label for="Uni Project"> Uni Project</label><br>
+                    <input type="checkbox" id="Personal Project" name="Personal Project" value="Personal Project">
+                    <label for="Personal Project"> Personal Project</label><br>
+                    <input type="checkbox" id="Work Project" name="Work Project" value="Work Project">
+                    <label for="Work Project"> Work Project</label><br>
+                    <input type="checkbox" id="Group Project" name="Group Project" value="Group Project">
+                    <label for="Group Project"> Group Project</label><br>
+                    <input type="checkbox" id="Open Source" name="Open Source" value="Open Source">
+                    <label for="Open Source"> Open Source</label><br>
+                    <input type="checkbox" id="Robotics" name="Robotics" value="Robotics">
+                    <label for="Robotics"> Robotics</label><br>
+                    <input type="checkbox" id="Game Development" name="Game Development" value="Game Development">
+                    <label for="Game Development"> Game Development</label><br>
+                    <input type="checkbox" id="Code" name="Code" value="Code">
+                    <label for="Code"> Code</label><br>
+                    <!--File Upload -->
+                    <label for="file-upload">Choose a file to upload:</label>
+                    <input type="file" id="file-upload" name="file-upload" multiple>
+                    <!--Submit Button -->
+                    <input type="submit" name="Publish" value="Publish Post">
+                    <input type="reset" name="Reset" value="Reset Form">
+                </div> <!--TODO: Format, validate, and allow for submission of post -->
             </div>
             <!-- Title 
             Date of Creation 
