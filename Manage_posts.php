@@ -29,48 +29,64 @@
             </div>
             <div class="manage_container">
                 <div id="create_post_container">
-                    <div id="post_create_topFormatting">                    <!--Post title -->
-                        <label id="lblTitle" for="post-title">Post Title:</label>
-                        <input type="text" id="post-title" name="post-title">
-                        <!--Author-->
-                        <label id="lblAuthor" for="post-author">Author:</label>
-                        <input type="text" id="post-author" name="post-author" value="Oliver Scott">
-                        <!--Post Desc -->
-                        <label id="lblDesc" for="post-description">Post Description:</label>
-                        <textarea id="post-description" name="post-description" rows="3" cols="50" maxlength="150"></textarea>
-                        <!--Post Content -->
-                        <label id="lblContent" for="post-content">content:</label>
-                        <textarea id="post-content" name="post-content" rows="7" cols="50" minlength="500"></textarea>
-                        <!--File Upload -->
-                        <label id="lblFile" for="file-upload">Choose a file to upload:</label>
-                        <input type="file" id="file-upload" name="file-upload" multiple>
-                    </div>
-                    <!--tags checkbox -->
-                    <input type="checkbox" id="Software" name="Software" value="Software">
-                    <label for="Software"> Software</label><br>
-                    <input type="checkbox" id="Engineering" name="Engineering" value="Engineering">
-                    <label for="Engineering"> Engineering</label><br>
-                    <input type="checkbox" id="Uni Project" name="Uni Project" value="Uni Project">
-                    <label for="Uni Project"> Uni Project</label><br>
-                    <input type="checkbox" id="Personal Project" name="Personal Project" value="Personal Project">
-                    <label for="Personal Project"> Personal Project</label><br>
-                    <input type="checkbox" id="Work Project" name="Work Project" value="Work Project">
-                    <label for="Work Project"> Work Project</label><br>
-                    <input type="checkbox" id="Group Project" name="Group Project" value="Group Project">
-                    <label for="Group Project"> Group Project</label><br>
-                    <input type="checkbox" id="Open Source" name="Open Source" value="Open Source">
-                    <label for="Open Source"> Open Source</label><br>
-                    <input type="checkbox" id="Robotics" name="Robotics" value="Robotics">
-                    <label for="Robotics"> Robotics</label><br>
-                    <input type="checkbox" id="Game Development" name="Game Development" value="Game Development">
-                    <label for="Game Development"> Game Development</label><br>
-                    <input type="checkbox" id="Web Development" name="Web Development" value="Web Development">
-                    <label for="Web Development"> Web Development</label><br>
-                    <input type="checkbox" id="Code" name="Code" value="Code">
-                    <label for="Code"> Code</label><br>
-                    <!--Submit Button -->
-                    <input type="submit" name="Publish" value="Publish Post">
-                    <input type="reset" name="Reset" value="Reset Form">
+                    <form id="create_post_form" action="Manage_posts.php" method="post" enctype="multipart/form-data"> <!--CHECK if this is the correct address way -->
+                        <div id="post_create_topFormatting">                    <!--Post title -->
+                            <label id="lblTitle" for="post-title">Post Title:</label>
+                            <input type="text" id="post-title" name="post-title">
+                            <!--Author-->
+                            <label id="lblAuthor" for="post-author">Author:</label>
+                            <input type="text" id="post-author" name="post-author" value="Oliver Scott">
+                            <!--Post Desc -->
+                            <label id="lblDesc" for="post-description">Post Description:</label>
+                            <textarea id="post-description" name="post-description" rows="3" cols="50" maxlength="150"></textarea>
+                            <!--Post Content -->
+                            <label id="lblContent" for="post-content">content:</label>
+                            <textarea id="post-content" name="post-content" rows="7" cols="50" minlength="500"></textarea>
+                            <!--File Upload -->
+                            <label id="lblFile" for="file-upload">Choose a file to upload:</label>
+                            <input type="file" id="file-upload" name="file-upload" multiple>
+                        </div>
+                        <!--tags checkbox -->
+                        <div id="tagSection">
+                            <input type="checkbox" id="Software" name="tagCategories[]" value="Software">
+                            <label for="Software"> Software</label><br>
+
+                            <input type="checkbox" id="Engineering" name="tagCategories[]" value="Engineering">
+                            <label for="Engineering"> Engineering</label><br>
+
+                            <input type="checkbox" id="Uni_Project" name="tagCategories[]" value="Uni Project">
+                            <label for="Uni_Project"> Uni Project</label><br>
+
+                            <input type="checkbox" id="Personal_Project" name="tagCategories[]" value="Personal Project">
+                            <label for="Personal_Project"> Personal Project</label><br>
+
+                            <input type="checkbox" id="Work_Project" name="tagCategories[]" value="Work Project">
+                            <label for="Work_Project"> Work Project</label><br>
+
+                            <input type="checkbox" id="Group_Project" name="tagCategories[]" value="Group Project">
+                            <label for="Group_Project"> Group Project</label><br>
+
+                            <input type="checkbox" id="Open_Source" name="tagCategories[]" value="Open Source">
+                            <label for="Open_Source"> Open Source</label><br>
+
+                            <input type="checkbox" id="Robotics" name="tagCategories[]" value="Robotics">
+                            <label for="Robotics"> Robotics</label><br>
+
+                            <input type="checkbox" id="Game_Development" name="tagCategories[]" value="Game Development">
+                            <label for="Game_Development"> Game Development</label><br>
+
+                            <input type="checkbox" id="Web_Development" name="tagCategories[]" value="Web Development">
+                            <label for="Web_Development"> Web Development</label><br>
+
+                            <input type="checkbox" id="Code" name="tagCategories[]" value="Code">
+                            <label for="Code"> Code</label><br>
+                        </div>
+                        <!--Submit Button -->
+                        <div id="buttonsGroup">
+                            <input type="submit" name="Publish" value="Publish Post">
+                            <input type="reset" name="Reset" value="Reset Form">
+                        </div>
+                    </form>
                 </div> <!--TODO: Format, validate, and allow for submission of post -->
             </div>
             <!-- Title 
