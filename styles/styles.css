@@ -423,3 +423,23 @@ h1{
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+#tagSection {
+  background-color: plum;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  background-color: #c8dedc;
+  border: solid 1px black;
+}
+
+#buttonsGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}

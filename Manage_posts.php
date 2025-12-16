@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="styles/images/OS_icon.png">
     <title>Oliver's Portfolio - Manage Page</title>
     <script type="text/javascript" src="darkmode.js" defer></script>
+    <script type="text/javascript" src="script.js" defer></script>
 </head>
 <?php session_start(); ?>
 
@@ -24,10 +25,10 @@
             <div class="manage_container">
                 <?php // TODO: Add functionality to manage posts, such as editing or deleting them. 
                 ?>
-                <p> This page is currently under construction. Please check back later for updates.</p>
-                <input type="submit" name="Create" value="Create Post">
+                <!-- <p> This page is currently under construction. Please check back later for updates.</p> -->
+                <input type="button" id="CreateBtn" name="CreateBtn" value="Create Post">
             </div>
-            <div class="manage_container">
+            <div class="manage_container" id="createPost_containerID">
                 <div id="create_post_container">
                     <form id="create_post_form" action="Manage_posts.php" method="post" enctype="multipart/form-data"> <!--CHECK if this is the correct address way -->
                         <div id="post_create_topFormatting">                    <!--Post title -->
@@ -47,6 +48,7 @@
                             <input type="file" id="file-upload" name="file-upload" multiple>
                         </div>
                         <!--tags checkbox -->
+                        <p>Select Tag Categories:</p>
                         <div id="tagSection">
                             <input type="checkbox" id="Software" name="tagCategories[]" value="Software">
                             <label for="Software"> Software</label><br>
