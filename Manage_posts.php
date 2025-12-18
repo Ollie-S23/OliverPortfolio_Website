@@ -85,7 +85,7 @@
                         </div>
                         <!--Submit Button -->
                         <div id="buttonsGroup">
-                            <input type="submit" name="Publish" value="Publish Post">
+                            <input type="submit" name="Publish" id="publishBtn" value="Publish Post">
                             <input type="reset" name="Reset" value="Reset Form">
                         </div>
                     </form>
