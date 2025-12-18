@@ -30,7 +30,8 @@
             </div>
             <div class="manage_container" id="createPost_containerID">
                 <div id="create_post_container">
-                    <form id="create_post_form" action="Manage_posts.php" method="post" enctype="multipart/form-data"> <!--CHECK if this is the correct address way -->
+                    <!-- <form id="create_post_form" action="Manage_posts.php" method="post" enctype="multipart/form-data"> CHECK if this is the correct address way -->
+                    <form id="create_post_form">
                         <div id="post_create_topFormatting">                    <!--Post title -->
                             <label id="lblTitle" for="post-title">Post Title:</label>
                             <input type="text" id="post-title" name="post-title">

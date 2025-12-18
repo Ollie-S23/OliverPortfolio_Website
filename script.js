@@ -14,7 +14,7 @@ window.addEventListener("load", function ()
         {
             if (containerToHide != null)
             {
-                var isHidden = window.getComputedStyle(containerToHide).display === "none";
+                var isHidden = window.getComputedStyle(containerToHide).display === "none"; // Check if the container is currently hidden
 
                 if (isHidden == true)
                 {
@@ -31,13 +31,26 @@ window.addEventListener("load", function ()
     }
 });
 
+const publishBtn = document.getElementById("publishBtn");
+
+window.addEventListener("load", function () {
+    if (publishBtn != null) {
+        publishBtn.addEventListener("click", function (event) {
+            if (!Validate()) {
+                // event.preventDefault();
+                containerToHide.style.display = "block";
+            }
+        });
+    }
+});
+
 function Validate() {
     let errMsg = "";
     let result = true;
 
     //fields 
 
-    const fileUpload = document.getElementById("file-upload").value.trim(); //file upload control
+    const fileUpload = document.getElementById("file-upload"); //file upload control
     const postTitle = document.getElementById("post-title").value.trim(); //title
     const postAuthor = document.getElementById("post-Author").value.trim(); //author
     const postDescription = document.getElementById("post-Description").value.trim(); //description
@@ -97,7 +110,7 @@ function Validate() {
                 if (isAllowed == false)
                 {
                     errMsg = errMsg + "File type not allowed: " + fileName + "\n";
-                    // result = false;
+                    result = false;
                     errMsg = errMsg + "Allowed file types are: " + allowedTypes.join(", ") + "\n";
                 }
             }
@@ -105,57 +118,82 @@ function Validate() {
     }
 
     //check fields are not empty
-    if (!checkCode && !checkEngineering && !checkGameDevelopment && !checkGameDevelopment && !checkGroupProject && !checkOpenSource && !checkPersonalProject && !checkRobotics && !checkSoftware && !checkUniProject && !checkWebDevelopment && !checkWorkProject) {
+    if (!checkCode && !checkEngineering && !checkGameDevelopment && !checkGroupProject && !checkOpenSource && !checkPersonalProject && !checkRobotics && !checkSoftware && !checkUniProject && !checkWebDevelopment && !checkWorkProject) {
         errMsg = errMsg + "Please select at least one category.\n";
+        result = false;
     }
 
-    if (fileUpload == "") {
+    if (fileUpload == null || fileUpload.files.length == 0) {
         errMsg = errMsg + "Please upload a file.\n";
+        result = false;
     }
 
     if (postTitle == "") {
         errMsg = errMsg + "Please enter a post title.\n";
+        result = false;
     }
     if (postAuthor == "") {
         errMsg = errMsg + "Please enter the post author.\n";
+        result = false;
     }
     if (postDescription == "") {
         errMsg = errMsg + "Please enter a post description.\n";
+        result = false;
     }
     if (postContent == "") {
         errMsg = errMsg + "Please enter the post content.\n";
+        result = false;
     }   
 
     //check field lengths
-    if (postTitle.length > 50 && postTitle.length < 15) {
+    if (postTitle.length > 50 || postTitle.length < 15) {
         errMsg = errMsg + "Post title must be between 15 and 50 characters.\n";
+        result = false;
     }
 
-    if (postAuthor.length > 30 && postAuthor.length < 5) {
+    if (postAuthor.length > 30 || postAuthor.length < 5) {
         errMsg = errMsg + "Post author must be between 5 and 30 characters.\n";
+        result = false;
     }
 
-    if (postDescription.length > 150 && postDescription.length < 20) {
+    if (postDescription.length > 150 || postDescription.length < 20) {
         errMsg = errMsg + "Post description must be between 20 and 150 characters.\n";
+        result = false;
     }
     if (postContent.length < 500) {
         errMsg = errMsg + "Post content must be at least 500 characters.\n";
+        result = false;
     }
 
 
     //return results
     if (errMsg != "") {
         alert(errMsg);
-        result = false;
+        // result = false;
     }
     return result;
 }
 
-window.addEventListener("load", () => {
+// window.addEventListener("load", () => {
+//     const form = document.getElementById("create_post_form");
+//     if (form) {
+//         form.addEventListener("submit", (event) => {
+//             if (!Validate()) {
+//                 event.preventDefault();
+//             }
+//         });
+//     }
+// });
+
+window.addEventListener("load", function () {
     const form = document.getElementById("create_post_form");
-    if (form) {
-        form.addEventListener("submit", (event) => {
-            // if (!Validate()) event.preventDefault();
+    if (form != null) {
+        form.addEventListener("submit", function (event) {
+            const isValid = Validate();
+            if (isValid == false) {
+                event.preventDefault();
+                return;
+            }
         });
     }
 });
