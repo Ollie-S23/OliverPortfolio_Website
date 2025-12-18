@@ -43,7 +43,7 @@
                             <textarea id="post-description" name="post-description" rows="3" cols="50" maxlength="150"></textarea>
                             <!--Post Content -->
                             <label id="lblContent" for="post-content">content:</label>
-                            <textarea id="post-content" name="post-content" rows="7" cols="50" minlength="500"></textarea>
+                            <textarea id="post-content" name="post-content" rows="7" cols="50" minlength="100"></textarea>
                             <!--File Upload -->
                             <label id="lblFile" for="file-upload">Choose a file to upload:</label>
                             <input type="file" id="file-upload" name="file-upload" multiple>

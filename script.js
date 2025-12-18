@@ -31,19 +31,6 @@ window.addEventListener("load", function ()
     }
 });
 
-const publishBtn = document.getElementById("publishBtn");
-
-window.addEventListener("load", function () {
-    if (publishBtn != null) {
-        publishBtn.addEventListener("click", function (event) {
-            if (!Validate()) {
-                // event.preventDefault();
-                containerToHide.style.display = "block";
-            }
-        });
-    }
-});
-
 function Validate() {
     let errMsg = "";
     let result = true;
@@ -52,9 +39,9 @@ function Validate() {
 
     const fileUpload = document.getElementById("file-upload"); //file upload control
     const postTitle = document.getElementById("post-title").value.trim(); //title
-    const postAuthor = document.getElementById("post-Author").value.trim(); //author
-    const postDescription = document.getElementById("post-Description").value.trim(); //description
-    const postContent = document.getElementById("post-Content").value.trim(); //content
+    const postAuthor = document.getElementById("post-author").value.trim(); //author
+    const postDescription = document.getElementById("post-description").value.trim(); //description
+    const postContent = document.getElementById("post-content").value.trim(); //content
 
     const checkSoftware = document.getElementById("Software").checked;
     const checkEngineering = document.getElementById("Engineering").checked;
@@ -117,14 +104,14 @@ function Validate() {
         }
     }
 
-    //check fields are not empty
-    if (!checkCode && !checkEngineering && !checkGameDevelopment && !checkGroupProject && !checkOpenSource && !checkPersonalProject && !checkRobotics && !checkSoftware && !checkUniProject && !checkWebDevelopment && !checkWorkProject) {
-        errMsg = errMsg + "Please select at least one category.\n";
+    if (fileUpload == null || fileUpload.files.length == 0) {
+        errMsg = errMsg + "Please upload at least one file.\n";
         result = false;
     }
 
-    if (fileUpload == null || fileUpload.files.length == 0) {
-        errMsg = errMsg + "Please upload a file.\n";
+    //check fields are not empty
+    if (!checkCode && !checkEngineering && !checkGameDevelopment && !checkGroupProject && !checkOpenSource && !checkPersonalProject && !checkRobotics && !checkSoftware && !checkUniProject && !checkWebDevelopment && !checkWorkProject) {
+        errMsg = errMsg + "Please select at least one category.\n";
         result = false;
     }
 
@@ -160,40 +147,25 @@ function Validate() {
         errMsg = errMsg + "Post description must be between 20 and 150 characters.\n";
         result = false;
     }
-    if (postContent.length < 500) {
-        errMsg = errMsg + "Post content must be at least 500 characters.\n";
+    if (postContent.length < 100) {
+        errMsg = errMsg + "Post content must be at least 100 characters.\n";
         result = false;
     }
 
 
     //return results
-    if (errMsg != "") {
+    if (errMsg !== "") {
         alert(errMsg);
-        // result = false;
+        result = false;
     }
     return result;
 }
 
-// window.addEventListener("load", () => {
-//     const form = document.getElementById("create_post_form");
-//     if (form) {
-//         form.addEventListener("submit", (event) => {
-//             if (!Validate()) {
-//                 event.preventDefault();
-//             }
-//         });
-//     }
-// });
-
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
     const form = document.getElementById("create_post_form");
-    if (form != null) {
-        form.addEventListener("submit", function (event) {
-            const isValid = Validate();
-            if (isValid == false) {
-                event.preventDefault();
-                return;
-            }
+    if (form) {
+        form.addEventListener("submit", (event) => {
+            if (!Validate()) event.preventDefault();
         });
     }
 });
