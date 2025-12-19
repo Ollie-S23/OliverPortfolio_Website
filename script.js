@@ -147,8 +147,8 @@ function Validate() {
         errMsg = errMsg + "Post description must be between 20 and 150 characters.\n";
         result = false;
     }
-    if (postContent.length < 100) {
-        errMsg = errMsg + "Post content must be at least 100 characters.\n";
+    if (postContent.length < 100 || postContent.length > 500) {
+        errMsg = errMsg + "Post content must be between 100 and 500 characters.\n";
         result = false;
     }
 

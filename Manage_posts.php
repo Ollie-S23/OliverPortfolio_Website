@@ -31,7 +31,7 @@
             <div class="manage_container" id="createPost_containerID">
                 <div id="create_post_container">
                     <!-- <form id="create_post_form" action="Manage_posts.php" method="post" enctype="multipart/form-data"> CHECK if this is the correct address way -->
-                    <form id="create_post_form">
+                    <form id="create_post_form" action="create_post.php" method="post" enctype="multipart/form-data">
                         <div id="post_create_topFormatting">                    <!--Post title -->
                             <label id="lblTitle" for="post-title">Post Title:</label>
                             <input type="text" id="post-title" name="post-title">
@@ -46,7 +46,7 @@
                             <textarea id="post-content" name="post-content" rows="7" cols="50" minlength="100"></textarea>
                             <!--File Upload -->
                             <label id="lblFile" for="file-upload">Choose a file to upload:</label>
-                            <input type="file" id="file-upload" name="file-upload" multiple>
+                            <input type="file" id="file-upload" name="file-upload[]" multiple>
                         </div>
                         <!--tags checkbox -->
                         <p>Select Tag Categories:</p>
