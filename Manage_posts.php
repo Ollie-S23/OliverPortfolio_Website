@@ -1,3 +1,17 @@
+<?php 
+    include('database.php');
+
+    // $sql = "";
+
+    // try {
+    //     mysqli_query($conn, $sql);
+    // } catch (mysqli_sql_exception) {
+    //     echo "could not execute query. <br>";
+    // }
+    
+    // mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +45,7 @@
             <div class="manage_container" id="createPost_containerID">
                 <div id="create_post_container">
                     <!-- <form id="create_post_form" action="Manage_posts.php" method="post" enctype="multipart/form-data"> CHECK if this is the correct address way -->
-                    <form id="create_post_form" action="create_post.php" method="post" enctype="multipart/form-data">
+                    <form id="create_post_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                         <div id="post_create_topFormatting">                    <!--Post title -->
                             <label id="lblTitle" for="post-title">Post Title:</label>
                             <input type="text" id="post-title" name="post-title">
@@ -110,3 +124,70 @@
 </body>
 
 </html>
+
+<?php 
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $postTitle = filter_input(INPUT_POST, "post-title", FILTER_SANITIZE_SPECIAL_CHARS);
+        $postAuthor = filter_input(INPUT_POST, "post-author", FILTER_SANITIZE_SPECIAL_CHARS);
+        $postDescription = filter_input(INPUT_POST, "post-description", FILTER_SANITIZE_SPECIAL_CHARS);
+        $postContent = filter_input(INPUT_POST, "post-content", FILTER_SANITIZE_SPECIAL_CHARS);
+        $tagCategories = filter_input(INPUT_POST, "tagCategories", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
+
+        $sqlposts = "INSERT INTO posts (title, author, description, content) VALUES ('$postTitle', '$postAuthor', '$postDescription', '$postContent')";
+
+        try { 
+            mysqli_query($conn, $sqlposts);
+            // echo "Post created successfully.";
+            echo "<script type='text/javascript'>alert(\"Post created successfully.\");</script>";
+
+            $sqlPostID = "SELECT id FROM posts WHERE title = '$postTitle'";
+            $result = mysqli_query($conn, $sqlPostID);
+
+            if (mysqli_num_rows ($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                echo "<script type='text/javascript'>alert(\"$row[id]\");</script>";
+
+                if(isset($_FILES['file-upload'])) {
+                    $fileCount = count($_FILES["file-upload"]["name"]);
+
+                    for ($i = 0; $i < $fileCount; $i++) {
+                        //Read the image file content into a string
+                        $image_data = file_get_contents($_FILES["file-upload"]["tmp_name"][$i]);
+                        //Encode the image data into base64 string
+                        $base64_image = base64_encode($image_data);
+
+                        $sqlpost_images = "INSERT INTO post_images (post_id, image_path) VALUES ('$row[id]', '$base64_image')";
+
+                        try {
+                            mysqli_query($conn, $sqlpost_images);
+                            echo "<script type='text/javascript'>alert(\"Images uploaded successfully.\");</script>";
+                            
+                        } catch (mysqli_sql_exception $e) {
+                            echo "<script type='text/javascript'>alert(\"Having difficulties connecting to database\");</script>";
+                        }
+                    }
+                }
+            }
+            else {
+                echo "<script type='text/javascript'>alert(\"No post found with that id.\");</script>";
+            }
+
+            // Insert tags
+            foreach ($tagCategories as $tag) {
+                $sqltag = "INSERT INTO post_categories (post_id, category) VALUES ('$row[id]', '$tag')";
+                try { 
+                    mysqli_query($conn, $sqltag);
+                } catch (mysqli_sql_exception $e) {
+                    echo "failed to insert tag.";
+                }
+            }
+
+        }
+        catch (mysqli_sql_exception $e) {
+            echo "<script type='text/javascript'>alert(\"That title is already taken.\");</script>";
+        }
+    }
+
+    mysqli_close($conn);
+?> 
