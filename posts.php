@@ -67,7 +67,7 @@
                     mysqli_free_result($result); // Free the result set to free up resources
                 } else { // If the query failed, display an error message and include the underconstruction animation
                     include('underconstruction_animation.inc');
-                   echo  "<p> Error: Failed to connect to database server. Please try again later and contact support </p>";
+                    echo  "<p> Error: Failed to connect to database server. Please try again later and contact support </p>";
                 }
 
                 mysqli_close($conn);
