@@ -17,7 +17,7 @@
         <header>
         <?php include('header.inc')?>
         </header>
-        <main>
+        <main id="posts_main">
             <?php
                 require_once("database.php");
 

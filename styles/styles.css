@@ -454,7 +454,35 @@ h1{
 }
 
 #post-separator {
-  border: 2px solid red;
+  border: 2px solid var(--accent-color);
   border-radius: 50%;
   margin: 5px 50px;
 }
+
+#post_main
+{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto auto;
+  grid-template-areas:
+    "post_title post_title"
+    "post_images post_author"
+    "post_images post_description"
+    "post_images post_postDate"
+    "post_images post_updateDate"
+    "post_images post_tags"
+    "post_content post_content";
+  gap: 16px;
+  align-items: start;
+}
+
+/*TODO: change class names to fit grid-area names 
+#post_title { grid-area: post_title; }
+#post_images { grid-area: post_images; }
+#post_author { grid-area: post_author; }
+#post_description { grid-area: post_description; }
+#post_postDate { grid-area: post_postDate; }
+#post_updateDate { grid-area: post_updateDate; }
+#post_tags { grid-area: post_tags; }
+#post_content { grid-area: post_content; }
+*/
