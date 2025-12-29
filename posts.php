@@ -33,19 +33,21 @@
                     $result = mysqli_query($conn, $sql);
 
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo "User ID: " . $row['id'] .
-                            " - Title: " . $row['title'] .
-                            " - Description: " . $row['description'] . 
-                            " - Author: " . $row['author'] .
-                            " - Content: " . $row['content'] .
-                            " - Created At: " . $row['created_at'];
+                        echo '<div class="post_main">';
+
+                        echo '<span class="post_title">Title: ' . $row['title'] . '</span><br>' .
+                            '<span class="post_description">Description: ' . $row['description'] . '</span><br>' .
+                            '<span class="post_author">Author: ' . $row['author'] . '</span><br>' .
+                            '<span class="post_content">Content: ' . $row['content'] . '</span><br>';
+                            '<span class="post_postDate">Created At: ' . $row['created_at'] . '</span><br>';
                             $sqlCheckUpdate = "SELECT updated_at FROM posts WHERE id = " . $row['id'];
                             $updateResult = mysqli_query($conn, $sqlCheckUpdate);
                             $date = mysqli_fetch_assoc($updateResult);
                             if ($date['updated_at'] != null) {
                                 echo " - Updated At: " . $date['updated_at'];
+                                echo '<span class="post-updateDate">Updated At: ' . $date['updated_at'] . '</span><br>';
                             } else {
-                                echo " - Not Updated";
+                                echo '<span class="post-updateDate">Updated At: Not Updated </span><br>';
                             }
                             echo "<br>";
                             $sqlCheckImages = "SELECT image_path FROM post_images WHERE post_id = " . $row['id'];
@@ -59,14 +61,19 @@
 
                                 echo '<img class="post_imagesDISP" src="data:image/jpeg;base64,' . $base64Image . '" alt="">';
                             }
+                            echo '<button class="prev" onclick="prevslide()">&#10094;</button>';
+                            echo '<button class="next" onclick="nextslide()">&#10095;</button>';
 
                             echo "<br>";
                             $sqlCheckTags = "SELECT Category FROM post_categories WHERE post_id = " . $row['id'];
                             $tagResult = mysqli_query($conn, $sqlCheckTags);
                             echo "Tags: ";
                             while ($tags = mysqli_fetch_assoc($tagResult)) {
-                                echo $tags['Category'] . " ";
+                                // echo $tags['Category'] . " ";
+                                echo "<span class='post_tags'> " . $tags['Category'] . " </span>";
                             }
+                            echo '</div>';
+
                             echo "<br><br>";
                             echo "<hr id='post-separator'>";
                     }
