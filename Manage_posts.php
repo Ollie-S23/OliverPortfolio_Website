@@ -104,18 +104,8 @@
                             <input type="reset" name="Reset" value="Reset Form">
                         </div>
                     </form>
-                </div> <!--TODO: Format, validate, and allow for submission of post -->
+                </div>
             </div>
-            <!-- Title 
-            Date of Creation 
-            Date of Edit
-            Image(s) - file upload 
-            Description 
-            Any external links
-            Author - Const “Oliver Scott”
-            Tags 
-            Categories 
-            Summary Text-->
         </main>
         <footer>
             <?php include('footer.inc') ?>

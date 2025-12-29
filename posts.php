@@ -68,6 +68,7 @@
                                 echo $tags['Category'] . " ";
                             }
                             echo "<br><br>";
+                            echo "<hr id='post-separator'>";
                     }
 
 
