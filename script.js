@@ -169,3 +169,82 @@ window.addEventListener("load", () => {
         });
     }
 });
+
+
+// Slider functionality
+document.addEventListener("DOMContentLoaded", function ()
+{
+    var slides = document.querySelectorAll(".slides img");
+    var slideIndex = 0;
+    var intervalId = null;
+
+    function showSlide(index)
+    {
+        if (index >= slides.length)
+        {
+            slideIndex = 0;
+        }
+        else if (index < 0)
+        {
+            slideIndex = slides.length - 1;
+        }
+        else
+        {
+            slideIndex = index;
+        }
+
+        for (var i = 0; i < slides.length; i++)
+        {
+            slides[i].classList.remove("displaySlide");
+        }
+
+        slides[slideIndex].classList.add("displaySlide");
+    }
+
+    function nextSlide()
+    {
+        showSlide(slideIndex + 1);
+    }
+
+    function prevSlide()
+    {
+        showSlide(slideIndex - 1);
+    }
+
+    if (slides.length > 0)
+    {
+        showSlide(0);
+
+        intervalId = setInterval(function ()
+        {
+            nextSlide();
+        }, 3000);
+    }
+
+    var prevButtons = document.querySelectorAll(".prev");
+    var nextButtons = document.querySelectorAll(".next");
+
+    for (var p = 0; p < prevButtons.length; p++)
+    {
+        prevButtons[p].addEventListener("click", function ()
+        {
+            if (intervalId != null)
+            {
+                clearInterval(intervalId);
+            }
+            prevSlide();
+        });
+    }
+
+    for (var n = 0; n < nextButtons.length; n++)
+    {
+        nextButtons[n].addEventListener("click", function ()
+        {
+            if (intervalId != null)
+            {
+                clearInterval(intervalId);
+            }
+            nextSlide();
+        });
+    }
+});

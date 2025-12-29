@@ -459,7 +459,8 @@ h1{
   margin: 5px 50px;
 }
 
-.post_main {
+.post_main
+{
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   grid-template-rows: auto auto auto auto auto auto auto;
@@ -472,12 +473,13 @@ h1{
     "post_images post_tags"
     "post_content post_content";
   gap: 16px;
+  align-items: start;
 }
 
 
 /*TODO: change class names to fit grid-area names */
 .post_title { grid-area: post_title; }
-.post_imagesDISP { grid-area: post_images; }
+.post_images { grid-area: post_images; }
 .post_author { grid-area: post_author; }
 .post_description { grid-area: post_description; }
 .post_postDate { grid-area: post_postDate; }
@@ -485,3 +487,44 @@ h1{
 .post_tags { grid-area: post_tags; }
 .post_content { grid-area: post_content; }
 
+.slider
+{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides img
+{
+    width: 100%;
+    display: none;
+}
+
+.slides img.displaySlide
+{
+    display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.slider button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 10px 15px;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+@keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
+}
