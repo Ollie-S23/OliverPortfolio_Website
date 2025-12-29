@@ -178,8 +178,9 @@
                 $sqltag = "INSERT INTO post_categories (post_id, category) VALUES ('$row[id]', '$tag')";
                 try { 
                     mysqli_query($conn, $sqltag);
+                    echo "<script type='text/javascript'>alert(\"Tag inserted successfully.\");</script>";
                 } catch (mysqli_sql_exception $e) {
-                    echo "failed to insert tag.";
+                    echo "<script type='text/javascript'>alert(\"Failed to insert tag.\");</script>";
                 }
             }
 

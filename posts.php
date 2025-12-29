@@ -38,7 +38,7 @@
                             " - Description: " . $row['description'] . 
                             " - Author: " . $row['author'] .
                             " - Content: " . $row['content'] .
-                            " - Created At: " . $row['created_at'] .
+                            " - Created At: " . $row['created_at'];
                             $sqlCheckUpdate = "SELECT updated_at FROM posts WHERE id = " . $row['id'];
                             $updateResult = mysqli_query($conn, $sqlCheckUpdate);
                             $date = mysqli_fetch_assoc($updateResult);
@@ -50,10 +50,16 @@
                             echo "<br>";
                             $sqlCheckImages = "SELECT image_path FROM post_images WHERE post_id = " . $row['id'];
                             $imageResult = mysqli_query($conn, $sqlCheckImages);
-                            while ($images = mysqli_fetch_assoc($imageResult)) {
-                                //display image
-                                echo '<img src="data:image/jpeg;base64,' . $images['image_path'] . '">';
+                            while ($images = mysqli_fetch_assoc($imageResult))
+                            {
+                                $base64Image = $images['image_path'];
+
+                                // Remove any accidental whitespace/newlines from the stored base64 string
+                                $base64Image = trim($base64Image);
+
+                                echo '<img class="post_imagesDISP" src="data:image/jpeg;base64,' . $base64Image . '" alt="">';
                             }
+
                             echo "<br>";
                             $sqlCheckTags = "SELECT Category FROM post_categories WHERE post_id = " . $row['id'];
                             $tagResult = mysqli_query($conn, $sqlCheckTags);
