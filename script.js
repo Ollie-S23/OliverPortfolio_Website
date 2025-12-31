@@ -171,80 +171,101 @@ window.addEventListener("load", () => {
 });
 
 
-// Slider functionality
+// Slider functionality (per slider, not global)
 document.addEventListener("DOMContentLoaded", function ()
 {
-    var slides = document.querySelectorAll(".slides img");
-    var slideIndex = 0;
-    var intervalId = null;
+    var sliders = document.querySelectorAll(".slider");
 
-    function showSlide(index)
+    for (var s = 0; s < sliders.length; s++)
     {
-        if (index >= slides.length)
+        (function (slider)
         {
-            slideIndex = 0;
-        }
-        else if (index < 0)
-        {
-            slideIndex = slides.length - 1;
-        }
-        else
-        {
-            slideIndex = index;
-        }
+            var slides = slider.querySelectorAll(".slides img");
+            var prevButton = slider.querySelector(".prev");
+            var nextButton = slider.querySelector(".next");
 
-        for (var i = 0; i < slides.length; i++)
-        {
-            slides[i].classList.remove("displaySlide");
-        }
+            var slideIndex = 0;
+            var intervalId = null;
 
-        slides[slideIndex].classList.add("displaySlide");
-    }
-
-    function nextSlide()
-    {
-        showSlide(slideIndex + 1);
-    }
-
-    function prevSlide()
-    {
-        showSlide(slideIndex - 1);
-    }
-
-    if (slides.length > 0)
-    {
-        showSlide(0);
-
-        intervalId = setInterval(function ()
-        {
-            nextSlide();
-        }, 3000);
-    }
-
-    var prevButtons = document.querySelectorAll(".prev");
-    var nextButtons = document.querySelectorAll(".next");
-
-    for (var p = 0; p < prevButtons.length; p++)
-    {
-        prevButtons[p].addEventListener("click", function ()
-        {
-            if (intervalId != null)
+            function showSlide(index)
             {
-                clearInterval(intervalId);
-            }
-            prevSlide();
-        });
-    }
+                if (slides.length == 0)
+                {
+                    return;
+                }
 
-    for (var n = 0; n < nextButtons.length; n++)
-    {
-        nextButtons[n].addEventListener("click", function ()
-        {
-            if (intervalId != null)
-            {
-                clearInterval(intervalId);
+                if (index >= slides.length)
+                {
+                    slideIndex = 0;
+                }
+                else if (index < 0)
+                {
+                    slideIndex = slides.length - 1;
+                }
+                else
+                {
+                    slideIndex = index;
+                }
+
+                for (var i = 0; i < slides.length; i++)
+                {
+                    slides[i].classList.remove("displaySlide");
+                }
+
+                slides[slideIndex].classList.add("displaySlide");
             }
-            nextSlide();
-        });
+
+            function nextSlide()
+            {
+                showSlide(slideIndex + 1);
+            }
+
+            function prevSlide()
+            {
+                showSlide(slideIndex - 1);
+            }
+
+            function startAuto()
+            {
+                if (slides.length > 1)
+                {
+                    intervalId = setInterval(function ()
+                    {
+                        nextSlide();
+                    }, 3000);
+                }
+            }
+
+            function stopAuto()
+            {
+                if (intervalId != null)
+                {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+            }
+
+            // Init
+            showSlide(0);
+            startAuto();
+
+            if (prevButton != null)
+            {
+                prevButton.addEventListener("click", function ()
+                {
+                    stopAuto();
+                    prevSlide();
+                });
+            }
+
+            if (nextButton != null)
+            {
+                nextButton.addEventListener("click", function ()
+                {
+                    stopAuto();
+                    nextSlide();
+                });
+            }
+        })(sliders[s]);
     }
 });
