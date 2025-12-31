@@ -171,7 +171,7 @@ window.addEventListener("load", () => {
 });
 
 
-// Slider functionality (per slider, not global)
+// Slider functionality with per post by id NOT gloabl and logic for multi/single images
 document.addEventListener("DOMContentLoaded", function ()
 {
     var sliders = document.querySelectorAll(".slider");
@@ -187,13 +187,28 @@ document.addEventListener("DOMContentLoaded", function ()
             var slideIndex = 0;
             var intervalId = null;
 
-            function showSlide(index)
+            if (slides.length <= 1)
             {
-                if (slides.length == 0)
+                if (slides.length === 1)
                 {
-                    return;
+                    slides[0].classList.add("displaySlide");
                 }
 
+                if (prevButton != null)
+                {
+                    prevButton.style.display = "none";
+                }
+
+                if (nextButton != null)
+                {
+                    nextButton.style.display = "none";
+                }
+
+                return; // Stop here — no slider logic needed
+            }
+
+            function showSlide(index)
+            {
                 if (index >= slides.length)
                 {
                     slideIndex = 0;
@@ -227,25 +242,12 @@ document.addEventListener("DOMContentLoaded", function ()
 
             function startAuto()
             {
-                if (slides.length > 1)
+                intervalId = setInterval(function ()
                 {
-                    intervalId = setInterval(function ()
-                    {
-                        nextSlide();
-                    }, 3000);
-                }
+                    nextSlide();
+                }, 3000);
             }
 
-            function stopAuto()
-            {
-                if (intervalId != null)
-                {
-                    clearInterval(intervalId);
-                    intervalId = null;
-                }
-            }
-
-            // Init
             showSlide(0);
             startAuto();
 
@@ -253,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function ()
             {
                 prevButton.addEventListener("click", function ()
                 {
-                    stopAuto();
+                    clearInterval(intervalId);
                     prevSlide();
                 });
             }
@@ -262,10 +264,11 @@ document.addEventListener("DOMContentLoaded", function ()
             {
                 nextButton.addEventListener("click", function ()
                 {
-                    stopAuto();
+                    clearInterval(intervalId);
                     nextSlide();
                 });
             }
+
         })(sliders[s]);
     }
 });
